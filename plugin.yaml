@@ -1,0 +1,10 @@
+name: web-yandex
+version: 1.0.0
+description: "Yandex Search API (v2 web) — RU-native web search provider. Requires YANDEX_SEARCH_API_KEY (cloud.yandex.ru/docs/searchapi). Search only; pair with an extract provider for web_extract."
+author: SokolovMA
+kind: backend
+provides_web_providers:
+  - yandex
+requires_env:
+  - YANDEX_SEARCH_API_KEY
+  - YANDEX_SEARCH_FOLDER_ID
