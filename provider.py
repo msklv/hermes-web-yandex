@@ -12,8 +12,8 @@ Config keys::
 
 Auth env vars (put in ``~/.hermes/.env``)::
 
-    YANDEX_SEARCH_API_KEY=...        # https://yandex.cloud/ru/docs/searchapi/
-    YANDEX_SEARCH_FOLDER_ID=...      # Yandex Cloud folder id (optional but recommended)
+    YANDEX_SEARCH_API_KEY=...        # https://aistudio.yandex.ru/ru/docs/search-api/
+    YANDEX_SEARCH_FOLDER_ID=...      # optional — service-account keys work without it
 """
 
 from __future__ import annotations
