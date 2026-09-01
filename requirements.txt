@@ -1,0 +1,2 @@
+# Runtime dependency (ships with Hermes; pinned here so CI dependency-audits it).
+httpx==0.28.1
