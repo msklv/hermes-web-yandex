@@ -31,6 +31,12 @@ There are two environment variables, both placed in `~/.hermes/.env`:
 | `YANDEX_SEARCH_API_KEY` | ✅ yes | [Create an API key](#create-an-api-key) (AI Studio) |
 | `YANDEX_SEARCH_FOLDER_ID` | ⚠️ optional | [Get the folder id](#get-the-folder-id) (AI Studio) |
 
+> **Enter them from the desktop UI** (no manual edit needed): the provider exposes
+> `get_setup_schema()`, so in Hermes Desktop open **Settings → Web Search / `hermes tools`**
+> and type the key (and optional folder id) straight into the Yandex card's fields —
+> it saves to `~/.hermes/.env` for you. A card that says **"No API key required"**
+> is the bug this schema override fixes (it only appears when the provider declares no env vars).
+
 ### Create an API key
 
 Yandex AI Studio is part of Yandex Cloud and reuses its auth. This plugin uses an **API key**

@@ -127,6 +127,28 @@ class YandexWebSearchProvider(WebSearchProvider):
     def supports_extract(self) -> bool:
         return False
 
+    def get_setup_schema(self) -> Dict[str, Any]:
+        # Drives the API-key fields in the desktop `hermes tools` / Settings → Web
+        # Search panel. Without this override the UI inherits an empty `env_vars` list
+        # and shows "No API key required" with nowhere to paste the key.
+        return {
+            "name": "Yandex Search API (v2 web)",
+            "badge": "ru",
+            "tag": "Yandex Cloud Search API v2 — RU-native search. Requires an AI Studio API key.",
+            "env_vars": [
+                {
+                    "key": "YANDEX_SEARCH_API_KEY",
+                    "prompt": "Yandex AI Studio API key",
+                    "url": "https://aistudio.yandex.ru/ru/docs/search-api/",
+                },
+                {
+                    "key": "YANDEX_SEARCH_FOLDER_ID",
+                    "prompt": "Yandex Cloud folder id (optional)",
+                    "url": "https://aistudio.yandex.ru/ru/docs/search-api/concepts/web-search",
+                },
+            ],
+        }
+
     def search(self, query: str, limit: int = 5) -> Dict[str, Any]:
         api_key = _env("YANDEX_SEARCH_API_KEY")
         if not api_key:
